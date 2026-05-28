@@ -1,0 +1,1470 @@
+{
+  "schema_version": 1,
+  "image_size": [
+    1200,
+    1800
+  ],
+  "page_count_range": [
+    5,
+    10
+  ],
+  "tier_label": "ALL CASES",
+  "fake_groups": [
+    "FAKEGRP-A",
+    "FAKEGRP-B",
+    "FAKEGRP-C",
+    "FAKEGRP-D",
+    "FAKEGRP-E",
+    "FAKEGRP-F"
+  ],
+  "fake_authors": [
+    "FAKE_AUTHOR_1",
+    "FAKE_AUTHOR_2",
+    "FAKE_AUTHOR_3"
+  ],
+  "fake_publishers": [
+    "FAKE_PUB_1",
+    "FAKE_PUB_2"
+  ],
+  "series": [
+    {
+      "slug": "crimson-veil",
+      "name": "Crimson Veil",
+      "cover_color": [
+        150,
+        233,
+        124
+      ],
+      "circle_color": null,
+      "anilist_id": 90001,
+      "mal_id": 90001,
+      "year": 2020,
+      "author": "FAKE_AUTHOR_1",
+      "publisher": "FAKE_PUB_1",
+      "purpose": "Named V00 prequel + V01-V05, tier-1 clean names.",
+      "layout": "named_v0_prequel",
+      "files": [
+        {
+          "relative_path": "Crimson Veil (2020) {language-en} {publicationStatus-ongoing}/Crimson Veil - V00 - Origins (2019).cbz",
+          "format": "cbz",
+          "page_count": 5,
+          "cover": {
+            "kind": "V",
+            "num": "00",
+            "subtitle": "Origins",
+            "year": 2019
+          }
+        },
+        {
+          "relative_path": "Crimson Veil (2020) {language-en} {publicationStatus-ongoing}/Crimson Veil - V01 (2020).cbz",
+          "format": "cbz",
+          "page_count": 9,
+          "cover": {
+            "kind": "V",
+            "num": "01",
+            "subtitle": null,
+            "year": 2020
+          }
+        },
+        {
+          "relative_path": "Crimson Veil (2020) {language-en} {publicationStatus-ongoing}/Crimson Veil - V02 (2020).cbz",
+          "format": "cbz",
+          "page_count": 7,
+          "cover": {
+            "kind": "V",
+            "num": "02",
+            "subtitle": null,
+            "year": 2020
+          }
+        },
+        {
+          "relative_path": "Crimson Veil (2020) {language-en} {publicationStatus-ongoing}/Crimson Veil - V03 (2021) {language-fr}.cbz",
+          "format": "cbz",
+          "page_count": 6,
+          "cover": {
+            "kind": "V",
+            "num": "03",
+            "subtitle": null,
+            "year": 2021
+          }
+        },
+        {
+          "relative_path": "Crimson Veil (2020) {language-en} {publicationStatus-ongoing}/Crimson Veil - V04 (2021).cbz",
+          "format": "cbz",
+          "page_count": 9,
+          "cover": {
+            "kind": "V",
+            "num": "04",
+            "subtitle": null,
+            "year": 2021
+          }
+        },
+        {
+          "relative_path": "Crimson Veil (2020) {language-en} {publicationStatus-ongoing}/Crimson Veil - V05 (2022).cbz",
+          "format": "cbz",
+          "page_count": 6,
+          "cover": {
+            "kind": "V",
+            "num": "05",
+            "subtitle": null,
+            "year": 2022
+          }
+        }
+      ]
+    },
+    {
+      "slug": "stellar-drift",
+      "name": "Stellar Drift",
+      "cover_color": [
+        48,
+        119,
+        89
+      ],
+      "circle_color": null,
+      "anilist_id": 90002,
+      "mal_id": 90002,
+      "year": 2018,
+      "author": "FAKE_AUTHOR_2",
+      "publisher": "FAKE_PUB_2",
+      "purpose": "V01-V03 + two named Specials/ entries, tier-1.",
+      "layout": "specials_subfolder",
+      "files": [
+        {
+          "relative_path": "Stellar Drift/Stellar Drift - V01 (2018).cbz",
+          "format": "cbz",
+          "page_count": 6,
+          "cover": {
+            "kind": "V",
+            "num": "01",
+            "subtitle": null,
+            "year": 2018
+          }
+        },
+        {
+          "relative_path": "Stellar Drift/Stellar Drift - V02 (2019).cbz",
+          "format": "cbz",
+          "page_count": 5,
+          "cover": {
+            "kind": "V",
+            "num": "02",
+            "subtitle": null,
+            "year": 2019
+          }
+        },
+        {
+          "relative_path": "Stellar Drift/Stellar Drift - V03 (2020).cbz",
+          "format": "cbz",
+          "page_count": 5,
+          "cover": {
+            "kind": "V",
+            "num": "03",
+            "subtitle": null,
+            "year": 2020
+          }
+        },
+        {
+          "relative_path": "Stellar Drift/Specials/SP1 - Solar Atlas.cbz",
+          "format": "cbz",
+          "page_count": 10,
+          "cover": {
+            "kind": "SP",
+            "num": "1",
+            "subtitle": "Solar Atlas",
+            "year": 2020
+          }
+        },
+        {
+          "relative_path": "Stellar Drift/Specials/SP2 - Lunar Atlas.cbz",
+          "format": "cbz",
+          "page_count": 8,
+          "cover": {
+            "kind": "SP",
+            "num": "2",
+            "subtitle": "Lunar Atlas",
+            "year": 2021
+          }
+        }
+      ]
+    },
+    {
+      "slug": "iron-garden-tankobon",
+      "name": "Iron Garden (Tankobon)",
+      "cover_color": [
+        148,
+        226,
+        221
+      ],
+      "circle_color": [
+        220,
+        50,
+        165
+      ],
+      "anilist_id": 90003,
+      "mal_id": 90003,
+      "year": 2003,
+      "author": "FAKE_AUTHOR_3",
+      "publisher": "FAKE_PUB_1",
+      "purpose": "Tankobon edition of the three-edition Bleach/Dragon Ball regression: folder name carries the edition ('Iron Garden (Tankobon)') but every cbz inside is named simply 'Iron Garden - V0X (year).cbz', identical to the other two editions. The parser MUST keep this distinct from kanzenban + color based on folder name alone, not on a file-name prefix shortcut.",
+      "layout": "tier1_linear_3vols",
+      "files": [
+        {
+          "relative_path": "Iron Garden (Tankobon)/Iron Garden - V01 (2003).cbz",
+          "format": "cbz",
+          "page_count": 10,
+          "cover": {
+            "kind": "V",
+            "num": "01",
+            "subtitle": null,
+            "year": 2003
+          }
+        },
+        {
+          "relative_path": "Iron Garden (Tankobon)/Iron Garden - V02 (2004).cbz",
+          "format": "cbz",
+          "page_count": 5,
+          "cover": {
+            "kind": "V",
+            "num": "02",
+            "subtitle": null,
+            "year": 2004
+          }
+        },
+        {
+          "relative_path": "Iron Garden (Tankobon)/Iron Garden - V03 (2005).cbz",
+          "format": "cbz",
+          "page_count": 9,
+          "cover": {
+            "kind": "V",
+            "num": "03",
+            "subtitle": null,
+            "year": 2005
+          }
+        }
+      ]
+    },
+    {
+      "slug": "iron-garden-kanzenban",
+      "name": "Iron Garden (Kanzenban)",
+      "cover_color": [
+        148,
+        226,
+        221
+      ],
+      "circle_color": [
+        60,
+        84,
+        114
+      ],
+      "anilist_id": 90004,
+      "mal_id": 90004,
+      "year": 2020,
+      "author": "FAKE_AUTHOR_3",
+      "publisher": "FAKE_PUB_1",
+      "purpose": "Kanzenban edition. Same shared cbz file naming as Tankobon and Color ('Iron Garden - V0X (year).cbz'); only the folder differs ('Iron Garden (Kanzenban)'). Parser must use folder = series identity.",
+      "layout": "tier1_linear_3vols",
+      "files": [
+        {
+          "relative_path": "Iron Garden (Kanzenban) (2020) {language-ja} {publicationStatus-hiatus}/Iron Garden - V01 (2020).cbz",
+          "format": "cbz",
+          "page_count": 10,
+          "cover": {
+            "kind": "V",
+            "num": "01",
+            "subtitle": null,
+            "year": 2020
+          }
+        },
+        {
+          "relative_path": "Iron Garden (Kanzenban) (2020) {language-ja} {publicationStatus-hiatus}/Iron Garden - V02 (2021).cbz",
+          "format": "cbz",
+          "page_count": 7,
+          "cover": {
+            "kind": "V",
+            "num": "02",
+            "subtitle": null,
+            "year": 2021
+          }
+        },
+        {
+          "relative_path": "Iron Garden (Kanzenban) (2020) {language-ja} {publicationStatus-hiatus}/Iron Garden - V03 (2022).cbz",
+          "format": "cbz",
+          "page_count": 9,
+          "cover": {
+            "kind": "V",
+            "num": "03",
+            "subtitle": null,
+            "year": 2022
+          }
+        }
+      ]
+    },
+    {
+      "slug": "iron-garden-color",
+      "name": "Iron Garden (Color)",
+      "cover_color": [
+        148,
+        226,
+        221
+      ],
+      "circle_color": [
+        166,
+        182,
+        249
+      ],
+      "anilist_id": 90005,
+      "mal_id": 90005,
+      "year": 2010,
+      "author": "FAKE_AUTHOR_3",
+      "publisher": "FAKE_PUB_1",
+      "purpose": "Color edition. Same shared cbz file naming as Tankobon and Kanzenban; only the folder differs ('Iron Garden (Color)'). Parser must use folder = series identity.",
+      "layout": "tier1_linear_3vols",
+      "files": [
+        {
+          "relative_path": "Iron Garden (Color)/Iron Garden - V01 (2010).cbz",
+          "format": "cbz",
+          "page_count": 5,
+          "cover": {
+            "kind": "V",
+            "num": "01",
+            "subtitle": null,
+            "year": 2010
+          }
+        },
+        {
+          "relative_path": "Iron Garden (Color)/Iron Garden - V02 (2011).cbz",
+          "format": "cbz",
+          "page_count": 6,
+          "cover": {
+            "kind": "V",
+            "num": "02",
+            "subtitle": null,
+            "year": 2011
+          }
+        },
+        {
+          "relative_path": "Iron Garden (Color)/Iron Garden - V03 (2012).cbz",
+          "format": "cbz",
+          "page_count": 10,
+          "cover": {
+            "kind": "V",
+            "num": "03",
+            "subtitle": null,
+            "year": 2012
+          }
+        }
+      ]
+    },
+    {
+      "slug": "wandering-lantern",
+      "name": "Wandering Lantern",
+      "cover_color": [
+        163,
+        86,
+        196
+      ],
+      "circle_color": null,
+      "anilist_id": 90006,
+      "mal_id": 90006,
+      "year": 2021,
+      "author": "FAKE_AUTHOR_1",
+      "publisher": "FAKE_PUB_2",
+      "purpose": "V01-V03 + loose C40-C42 at the same series root.",
+      "layout": "vols_plus_loose_chapters",
+      "files": [
+        {
+          "relative_path": "Wandering Lantern/Wandering Lantern - V01 (2021).cbz",
+          "format": "cbz",
+          "page_count": 7,
+          "cover": {
+            "kind": "V",
+            "num": "01",
+            "subtitle": null,
+            "year": 2021
+          }
+        },
+        {
+          "relative_path": "Wandering Lantern/Wandering Lantern - V02 (2022).cbz",
+          "format": "cbz",
+          "page_count": 6,
+          "cover": {
+            "kind": "V",
+            "num": "02",
+            "subtitle": null,
+            "year": 2022
+          }
+        },
+        {
+          "relative_path": "Wandering Lantern/Wandering Lantern - V03 (2023).cbz",
+          "format": "cbz",
+          "page_count": 8,
+          "cover": {
+            "kind": "V",
+            "num": "03",
+            "subtitle": null,
+            "year": 2023
+          }
+        },
+        {
+          "relative_path": "Wandering Lantern/Wandering Lantern - C40 (2024).cbz",
+          "format": "cbz",
+          "page_count": 5,
+          "cover": {
+            "kind": "C",
+            "num": "40",
+            "subtitle": null,
+            "year": 2024
+          }
+        },
+        {
+          "relative_path": "Wandering Lantern/Wandering Lantern - C41 (2024).cbz",
+          "format": "cbz",
+          "page_count": 7,
+          "cover": {
+            "kind": "C",
+            "num": "41",
+            "subtitle": null,
+            "year": 2024
+          }
+        },
+        {
+          "relative_path": "Wandering Lantern/Wandering Lantern - C42 (2024).cbz",
+          "format": "cbz",
+          "page_count": 6,
+          "cover": {
+            "kind": "C",
+            "num": "42",
+            "subtitle": null,
+            "year": 2024
+          }
+        }
+      ]
+    },
+    {
+      "slug": "moonlit-tavern",
+      "name": "Moonlit Tavern",
+      "cover_color": [
+        232,
+        159,
+        240
+      ],
+      "circle_color": null,
+      "anilist_id": 90007,
+      "mal_id": 90007,
+      "year": 2015,
+      "author": "FAKE_AUTHOR_2",
+      "publisher": "FAKE_PUB_1",
+      "purpose": "Vol-as-folder with per-chapter cbz. Rejected at level 1+2 today.",
+      "layout": "vol_as_folder_cbz",
+      "files": [
+        {
+          "relative_path": "Moonlit Tavern/V01/C01.cbz",
+          "format": "cbz",
+          "page_count": 9,
+          "cover": {
+            "kind": "C",
+            "num": "01",
+            "subtitle": null,
+            "year": 2015
+          }
+        },
+        {
+          "relative_path": "Moonlit Tavern/V01/C02.cbz",
+          "format": "cbz",
+          "page_count": 10,
+          "cover": {
+            "kind": "C",
+            "num": "02",
+            "subtitle": null,
+            "year": 2015
+          }
+        },
+        {
+          "relative_path": "Moonlit Tavern/V01/C03.cbz",
+          "format": "cbz",
+          "page_count": 5,
+          "cover": {
+            "kind": "C",
+            "num": "03",
+            "subtitle": null,
+            "year": 2015
+          }
+        }
+      ]
+    },
+    {
+      "slug": "silent-compass",
+      "name": "Silent Compass",
+      "cover_color": [
+        246,
+        18,
+        168
+      ],
+      "circle_color": null,
+      "anilist_id": 90008,
+      "mal_id": 90008,
+      "year": 2019,
+      "author": "FAKE_AUTHOR_3",
+      "publisher": "FAKE_PUB_2",
+      "purpose": "Vol-as-folder with loose PNGs (V01/01.png...). Rejected at level 1+2 today (series becomes 'V01').",
+      "layout": "vol_as_folder_images",
+      "files": [
+        {
+          "relative_path": "Silent Compass/V01",
+          "format": "loose-images-folder",
+          "page_count": 10,
+          "cover": {
+            "kind": "V",
+            "num": "01",
+            "subtitle": null,
+            "year": 2019
+          }
+        }
+      ]
+    },
+    {
+      "slug": "quill-lantern",
+      "name": "Quill Lantern",
+      "cover_color": [
+        43,
+        114,
+        231
+      ],
+      "circle_color": null,
+      "anilist_id": 90009,
+      "mal_id": 90009,
+      "year": 2017,
+      "author": "FAKE_AUTHOR_1",
+      "publisher": "FAKE_PUB_1",
+      "purpose": "Loose PNGs directly in series folder (no V folder). Should be accepted as single-volume series.",
+      "layout": "loose_images_at_series_root",
+      "files": [
+        {
+          "relative_path": "Quill Lantern",
+          "format": "loose-images-folder",
+          "page_count": 9,
+          "cover": {
+            "kind": "V",
+            "num": "01",
+            "subtitle": null,
+            "year": 2017
+          }
+        }
+      ]
+    },
+    {
+      "slug": "tide-cartography",
+      "name": "Tide Cartography",
+      "cover_color": [
+        101,
+        36,
+        255
+      ],
+      "circle_color": null,
+      "anilist_id": 90010,
+      "mal_id": 90010,
+      "year": 2016,
+      "author": "FAKE_AUTHOR_2",
+      "publisher": "FAKE_PUB_2",
+      "purpose": "Cbz volumes + chapter-folders-of-images. Unusual but real.",
+      "layout": "mixed_cbz_and_image_chapters",
+      "files": [
+        {
+          "relative_path": "Tide Cartography/Tide Cartography - V01 (2016).cbz",
+          "format": "cbz",
+          "page_count": 10,
+          "cover": {
+            "kind": "V",
+            "num": "01",
+            "subtitle": null,
+            "year": 2016
+          }
+        },
+        {
+          "relative_path": "Tide Cartography/Tide Cartography - V02 (2017).cbz",
+          "format": "cbz",
+          "page_count": 7,
+          "cover": {
+            "kind": "V",
+            "num": "02",
+            "subtitle": null,
+            "year": 2017
+          }
+        },
+        {
+          "relative_path": "Tide Cartography/C40",
+          "format": "loose-images-folder",
+          "page_count": 7,
+          "cover": {
+            "kind": "C",
+            "num": "40",
+            "subtitle": null,
+            "year": 2018
+          }
+        },
+        {
+          "relative_path": "Tide Cartography/C41",
+          "format": "loose-images-folder",
+          "page_count": 7,
+          "cover": {
+            "kind": "C",
+            "num": "41",
+            "subtitle": null,
+            "year": 2018
+          }
+        }
+      ]
+    },
+    {
+      "slug": "hollow-sparrow",
+      "name": "Hollow Sparrow",
+      "cover_color": [
+        227,
+        215,
+        105
+      ],
+      "circle_color": null,
+      "anilist_id": 90011,
+      "mal_id": 90011,
+      "year": 2017,
+      "author": "FAKE_AUTHOR_1",
+      "publisher": "FAKE_PUB_1",
+      "purpose": "Plain tier-1 baseline, 5 volumes. All Accepted at L1+L2.",
+      "layout": "tier1_linear_5vols",
+      "files": [
+        {
+          "relative_path": "Hollow Sparrow (2015) {publicationStatus-completed}/Hollow Sparrow - V01 (2017).cbz",
+          "format": "cbz",
+          "page_count": 8,
+          "cover": {
+            "kind": "V",
+            "num": "01",
+            "subtitle": null,
+            "year": 2017
+          }
+        },
+        {
+          "relative_path": "Hollow Sparrow (2015) {publicationStatus-completed}/Hollow Sparrow - V02 (2018).cbz",
+          "format": "cbz",
+          "page_count": 9,
+          "cover": {
+            "kind": "V",
+            "num": "02",
+            "subtitle": null,
+            "year": 2018
+          }
+        },
+        {
+          "relative_path": "Hollow Sparrow (2015) {publicationStatus-completed}/Hollow Sparrow - V03 (2019).cbz",
+          "format": "cbz",
+          "page_count": 7,
+          "cover": {
+            "kind": "V",
+            "num": "03",
+            "subtitle": null,
+            "year": 2019
+          }
+        },
+        {
+          "relative_path": "Hollow Sparrow (2015) {publicationStatus-completed}/Hollow Sparrow - V04 (2020).cbz",
+          "format": "cbz",
+          "page_count": 7,
+          "cover": {
+            "kind": "V",
+            "num": "04",
+            "subtitle": null,
+            "year": 2020
+          }
+        },
+        {
+          "relative_path": "Hollow Sparrow (2015) {publicationStatus-completed}/Hollow Sparrow - V05 (2021).cbz",
+          "format": "cbz",
+          "page_count": 10,
+          "cover": {
+            "kind": "V",
+            "num": "05",
+            "subtitle": null,
+            "year": 2021
+          }
+        }
+      ]
+    },
+    {
+      "slug": "velvet-reckoning",
+      "name": "Velvet Reckoning",
+      "cover_color": [
+        109,
+        57,
+        24
+      ],
+      "circle_color": null,
+      "anilist_id": 90012,
+      "mal_id": 90012,
+      "year": 2014,
+      "author": "FAKE_AUTHOR_2",
+      "publisher": "FAKE_PUB_2",
+      "purpose": "All tier-0 scene-style names. Lenient at L1, Rejected at L2.",
+      "layout": "tier0_scene_5vols",
+      "files": [
+        {
+          "relative_path": "Velvet Reckoning/Velvet Reckoning.v01.(2014).FAKEGRP-E.cbz",
+          "format": "cbz",
+          "page_count": 7,
+          "cover": {
+            "kind": "V",
+            "num": "01",
+            "subtitle": null,
+            "year": 2014
+          }
+        },
+        {
+          "relative_path": "Velvet Reckoning/[FAKEGRP-D] Velvet Reckoning v02 (2015).cbz",
+          "format": "cbz",
+          "page_count": 5,
+          "cover": {
+            "kind": "V",
+            "num": "02",
+            "subtitle": null,
+            "year": 2015
+          }
+        },
+        {
+          "relative_path": "Velvet Reckoning/Velvet Reckoning v03 (2016) (Digital) (REPACK) (FAKEGRP-D).cbz",
+          "format": "cbz",
+          "page_count": 5,
+          "cover": {
+            "kind": "V",
+            "num": "03",
+            "subtitle": null,
+            "year": 2016
+          }
+        },
+        {
+          "relative_path": "Velvet Reckoning/Velvet Reckoning - v04 (2017) (Digital-FAKEGRP-F-C) [FAKEGRP-F+].cbz",
+          "format": "cbz",
+          "page_count": 10,
+          "cover": {
+            "kind": "V",
+            "num": "04",
+            "subtitle": null,
+            "year": 2017
+          }
+        },
+        {
+          "relative_path": "Velvet Reckoning/Velvet Reckoning - v05 (2018) (Digital-FAKEGRP-B-C) [FAKEGRP-B+].cbz",
+          "format": "cbz",
+          "page_count": 9,
+          "cover": {
+            "kind": "V",
+            "num": "05",
+            "subtitle": null,
+            "year": 2018
+          }
+        }
+      ]
+    },
+    {
+      "slug": "quiet-engine",
+      "name": "Quiet Engine",
+      "cover_color": [
+        230,
+        208,
+        194
+      ],
+      "circle_color": null,
+      "anilist_id": 90013,
+      "mal_id": 90013,
+      "year": 2022,
+      "author": "FAKE_AUTHOR_3",
+      "publisher": "FAKE_PUB_1",
+      "purpose": "Fully tokenized folder + {extraOriginalFilename-...} on every file.",
+      "layout": "tier2_tokenized",
+      "files": [
+        {
+          "relative_path": "Quiet Engine (2022) {aniListId-90013} {malId-90013} {hardcoverId-90113} {metronId-90213} {comicVineSeriesId-cv-quiet-engine} {mangaBakaId-90313}/Quiet Engine - V01 (2022) {extraOriginalFilename-[FAKEGRP-C] Quiet Engine v01 (2022).cbz}.cbz",
+          "format": "cbz",
+          "page_count": 5,
+          "cover": {
+            "kind": "V",
+            "num": "01",
+            "subtitle": null,
+            "year": 2022
+          }
+        },
+        {
+          "relative_path": "Quiet Engine (2022) {aniListId-90013} {malId-90013} {hardcoverId-90113} {metronId-90213} {comicVineSeriesId-cv-quiet-engine} {mangaBakaId-90313}/Quiet Engine - V02 (2023) {extraOriginalFilename-[FAKEGRP-F] Quiet Engine v02 (2023).cbz}.cbz",
+          "format": "cbz",
+          "page_count": 5,
+          "cover": {
+            "kind": "V",
+            "num": "02",
+            "subtitle": null,
+            "year": 2023
+          }
+        },
+        {
+          "relative_path": "Quiet Engine (2022) {aniListId-90013} {malId-90013} {hardcoverId-90113} {metronId-90213} {comicVineSeriesId-cv-quiet-engine} {mangaBakaId-90313}/Quiet Engine - V03 (2024) {extraOriginalFilename-Quiet Engine - v03 (2024) (Digital-FAKEGRP-E-C) [FAKEGRP-E+].cbz}.cbz",
+          "format": "cbz",
+          "page_count": 5,
+          "cover": {
+            "kind": "V",
+            "num": "03",
+            "subtitle": null,
+            "year": 2024
+          }
+        },
+        {
+          "relative_path": "Quiet Engine (2022) {aniListId-90013} {malId-90013} {hardcoverId-90113} {metronId-90213} {comicVineSeriesId-cv-quiet-engine} {mangaBakaId-90313}/Quiet Engine - V04 (2025) {extraOriginalFilename-Quiet Engine v04 (2025) (Digital) (REPACK) (FAKEGRP-F).cbz}.cbz",
+          "format": "cbz",
+          "page_count": 6,
+          "cover": {
+            "kind": "V",
+            "num": "04",
+            "subtitle": null,
+            "year": 2025
+          }
+        },
+        {
+          "relative_path": "Quiet Engine (2022) {aniListId-90013} {malId-90013} {hardcoverId-90113} {metronId-90213} {comicVineSeriesId-cv-quiet-engine} {mangaBakaId-90313}/Quiet Engine - V05 (2026) {extraOriginalFilename-Quiet Engine v05 (2026) (Digital) (FAKEGRP-E).cbz}.cbz",
+          "format": "cbz",
+          "page_count": 9,
+          "cover": {
+            "kind": "V",
+            "num": "05",
+            "subtitle": null,
+            "year": 2026
+          }
+        }
+      ]
+    },
+    {
+      "slug": "bramble-king",
+      "name": "Bramble King",
+      "cover_color": [
+        106,
+        144,
+        18
+      ],
+      "circle_color": null,
+      "anilist_id": 90014,
+      "mal_id": 90014,
+      "year": 2016,
+      "author": "FAKE_AUTHOR_1",
+      "publisher": "FAKE_PUB_2",
+      "purpose": "V01-V02 scene-style, V03-V05 clean. One series, mixed outcomes.",
+      "layout": "mixed_strictness",
+      "files": [
+        {
+          "relative_path": "Bramble King/Bramble King.v01.(2016).FAKEGRP-D.cbz",
+          "format": "cbz",
+          "page_count": 7,
+          "cover": {
+            "kind": "V",
+            "num": "01",
+            "subtitle": null,
+            "year": 2016
+          }
+        },
+        {
+          "relative_path": "Bramble King/Bramble King v02 (2017) (Digital) (REPACK) (FAKEGRP-D).cbz",
+          "format": "cbz",
+          "page_count": 6,
+          "cover": {
+            "kind": "V",
+            "num": "02",
+            "subtitle": null,
+            "year": 2017
+          }
+        },
+        {
+          "relative_path": "Bramble King/Bramble King - V03 (2018).cbz",
+          "format": "cbz",
+          "page_count": 10,
+          "cover": {
+            "kind": "V",
+            "num": "03",
+            "subtitle": null,
+            "year": 2018
+          }
+        },
+        {
+          "relative_path": "Bramble King/Bramble King - V04 (2019).cbz",
+          "format": "cbz",
+          "page_count": 7,
+          "cover": {
+            "kind": "V",
+            "num": "04",
+            "subtitle": null,
+            "year": 2019
+          }
+        },
+        {
+          "relative_path": "Bramble King/Bramble King - V05 (2020).cbz",
+          "format": "cbz",
+          "page_count": 8,
+          "cover": {
+            "kind": "V",
+            "num": "05",
+            "subtitle": null,
+            "year": 2020
+          }
+        }
+      ]
+    },
+    {
+      "slug": "frostline-saga",
+      "name": "Frostline Saga",
+      "cover_color": [
+        52,
+        245,
+        14
+      ],
+      "circle_color": null,
+      "anilist_id": 90015,
+      "mal_id": 90015,
+      "year": 2013,
+      "author": "FAKE_AUTHOR_2",
+      "publisher": "FAKE_PUB_1",
+      "purpose": "Decimal volume numbers: V01, V01.5, V02, V02.3, V03.",
+      "layout": "decimal_volumes",
+      "files": [
+        {
+          "relative_path": "Frostline Saga/Frostline Saga - V01 (2013).cbz",
+          "format": "cbz",
+          "page_count": 10,
+          "cover": {
+            "kind": "V",
+            "num": "01",
+            "subtitle": null,
+            "year": 2013
+          }
+        },
+        {
+          "relative_path": "Frostline Saga/Frostline Saga - V01.5 - Interlude (2013).cbz",
+          "format": "cbz",
+          "page_count": 10,
+          "cover": {
+            "kind": "V",
+            "num": "01.5",
+            "subtitle": "Interlude",
+            "year": 2013
+          }
+        },
+        {
+          "relative_path": "Frostline Saga/Frostline Saga - V02 (2014).cbz",
+          "format": "cbz",
+          "page_count": 8,
+          "cover": {
+            "kind": "V",
+            "num": "02",
+            "subtitle": null,
+            "year": 2014
+          }
+        },
+        {
+          "relative_path": "Frostline Saga/Frostline Saga - V02.3 (2014).cbz",
+          "format": "cbz",
+          "page_count": 7,
+          "cover": {
+            "kind": "V",
+            "num": "02.3",
+            "subtitle": null,
+            "year": 2014
+          }
+        },
+        {
+          "relative_path": "Frostline Saga/Frostline Saga - V03 (2015).cbz",
+          "format": "cbz",
+          "page_count": 5,
+          "cover": {
+            "kind": "V",
+            "num": "03",
+            "subtitle": null,
+            "year": 2015
+          }
+        }
+      ]
+    },
+    {
+      "slug": "paper-lions",
+      "name": "Paper Lions",
+      "cover_color": [
+        25,
+        167,
+        31
+      ],
+      "circle_color": null,
+      "anilist_id": 90016,
+      "mal_id": 90016,
+      "year": 2012,
+      "author": "FAKE_AUTHOR_3",
+      "publisher": "FAKE_PUB_2",
+      "purpose": "Uses T (tome) tokens instead of V across all 5 volumes.",
+      "layout": "t_tokens",
+      "files": [
+        {
+          "relative_path": "Paper Lions/Paper Lions - T01 (2012).cbz",
+          "format": "cbz",
+          "page_count": 8,
+          "cover": {
+            "kind": "T",
+            "num": "01",
+            "subtitle": null,
+            "year": 2012
+          }
+        },
+        {
+          "relative_path": "Paper Lions/Paper Lions - T02 (2013).cbz",
+          "format": "cbz",
+          "page_count": 9,
+          "cover": {
+            "kind": "T",
+            "num": "02",
+            "subtitle": null,
+            "year": 2013
+          }
+        },
+        {
+          "relative_path": "Paper Lions/Paper Lions - T03 (2014).cbz",
+          "format": "cbz",
+          "page_count": 7,
+          "cover": {
+            "kind": "T",
+            "num": "03",
+            "subtitle": null,
+            "year": 2014
+          }
+        },
+        {
+          "relative_path": "Paper Lions/Paper Lions - T04 (2015).cbz",
+          "format": "cbz",
+          "page_count": 9,
+          "cover": {
+            "kind": "T",
+            "num": "04",
+            "subtitle": null,
+            "year": 2015
+          }
+        },
+        {
+          "relative_path": "Paper Lions/Paper Lions - T05 (2016).cbz",
+          "format": "cbz",
+          "page_count": 9,
+          "cover": {
+            "kind": "T",
+            "num": "05",
+            "subtitle": null,
+            "year": 2016
+          }
+        }
+      ]
+    },
+    {
+      "slug": "glasswing-court",
+      "name": "Glasswing Court",
+      "cover_color": [
+        144,
+        14,
+        8
+      ],
+      "circle_color": null,
+      "anilist_id": 90017,
+      "mal_id": 90017,
+      "year": 2018,
+      "author": "FAKE_AUTHOR_1",
+      "publisher": "FAKE_PUB_1",
+      "purpose": "Tier-1-ish but no (YYYY) on filenames or folder.",
+      "layout": "no_year",
+      "files": [
+        {
+          "relative_path": "Glasswing Court/Glasswing Court - V01.cbz",
+          "format": "cbz",
+          "page_count": 7,
+          "cover": {
+            "kind": "V",
+            "num": "01",
+            "subtitle": null,
+            "year": 2018
+          }
+        },
+        {
+          "relative_path": "Glasswing Court/Glasswing Court - V02.cbz",
+          "format": "cbz",
+          "page_count": 6,
+          "cover": {
+            "kind": "V",
+            "num": "02",
+            "subtitle": null,
+            "year": 2018
+          }
+        },
+        {
+          "relative_path": "Glasswing Court/Glasswing Court - V03.cbz",
+          "format": "cbz",
+          "page_count": 5,
+          "cover": {
+            "kind": "V",
+            "num": "03",
+            "subtitle": null,
+            "year": 2018
+          }
+        },
+        {
+          "relative_path": "Glasswing Court/Glasswing Court - V04.cbz",
+          "format": "cbz",
+          "page_count": 5,
+          "cover": {
+            "kind": "V",
+            "num": "04",
+            "subtitle": null,
+            "year": 2018
+          }
+        },
+        {
+          "relative_path": "Glasswing Court/Glasswing Court - V05.cbz",
+          "format": "cbz",
+          "page_count": 10,
+          "cover": {
+            "kind": "V",
+            "num": "05",
+            "subtitle": null,
+            "year": 2018
+          }
+        }
+      ]
+    },
+    {
+      "slug": "echo-mariner",
+      "name": "Echo Mariner",
+      "cover_color": [
+        253,
+        159,
+        159
+      ],
+      "circle_color": null,
+      "anilist_id": 90018,
+      "mal_id": 90018,
+      "year": 2019,
+      "author": "FAKE_AUTHOR_2",
+      "publisher": "FAKE_PUB_2",
+      "purpose": "Folder + files contain unknown {key-value} tokens; parser should drop them silently.",
+      "layout": "unknown_tokens",
+      "files": [
+        {
+          "relative_path": "Echo Mariner (2019) {aniListId-90018} {customRegion-pacific} {edition-deluxe}/Echo Mariner - V01 (2019) {extraOriginalFilename-original-1.cbz} {nonsenseKey-foo}.cbz",
+          "format": "cbz",
+          "page_count": 9,
+          "cover": {
+            "kind": "V",
+            "num": "01",
+            "subtitle": null,
+            "year": 2019
+          }
+        },
+        {
+          "relative_path": "Echo Mariner (2019) {aniListId-90018} {customRegion-pacific} {edition-deluxe}/Echo Mariner - V02 (2020) {extraOriginalFilename-original-2.cbz} {nonsenseKey-foo}.cbz",
+          "format": "cbz",
+          "page_count": 9,
+          "cover": {
+            "kind": "V",
+            "num": "02",
+            "subtitle": null,
+            "year": 2020
+          }
+        },
+        {
+          "relative_path": "Echo Mariner (2019) {aniListId-90018} {customRegion-pacific} {edition-deluxe}/Echo Mariner - V03 (2021) {extraOriginalFilename-original-3.cbz} {nonsenseKey-foo}.cbz",
+          "format": "cbz",
+          "page_count": 7,
+          "cover": {
+            "kind": "V",
+            "num": "03",
+            "subtitle": null,
+            "year": 2021
+          }
+        }
+      ]
+    },
+    {
+      "slug": "driftwood-heir",
+      "name": "Driftwood Heir",
+      "cover_color": [
+        247,
+        57,
+        58
+      ],
+      "circle_color": null,
+      "anilist_id": 90019,
+      "mal_id": 90019,
+      "year": 2024,
+      "author": "FAKE_AUTHOR_3",
+      "publisher": "FAKE_PUB_1",
+      "purpose": "Smallest case: one V01.cbz file.",
+      "layout": "single_volume",
+      "files": [
+        {
+          "relative_path": "Driftwood Heir/Driftwood Heir - V01 (2024).cbz",
+          "format": "cbz",
+          "page_count": 5,
+          "cover": {
+            "kind": "V",
+            "num": "01",
+            "subtitle": null,
+            "year": 2024
+          }
+        }
+      ]
+    },
+    {
+      "slug": "salt-and-cinder",
+      "name": "Salt and Cinder",
+      "cover_color": [
+        252,
+        143,
+        59
+      ],
+      "circle_color": null,
+      "anilist_id": 90020,
+      "mal_id": 90020,
+      "year": 2011,
+      "author": "FAKE_AUTHOR_1",
+      "publisher": "FAKE_PUB_2",
+      "purpose": "Specials-only series (no numbered volumes).",
+      "layout": "specials_only",
+      "files": [
+        {
+          "relative_path": "Salt and Cinder/Specials/SP1 - Brine Tales.cbz",
+          "format": "cbz",
+          "page_count": 9,
+          "cover": {
+            "kind": "SP",
+            "num": "1",
+            "subtitle": "Brine Tales",
+            "year": 2011
+          }
+        },
+        {
+          "relative_path": "Salt and Cinder/Specials/SP2 - Ash Letters.cbz",
+          "format": "cbz",
+          "page_count": 5,
+          "cover": {
+            "kind": "SP",
+            "num": "2",
+            "subtitle": "Ash Letters",
+            "year": 2012
+          }
+        }
+      ]
+    },
+    {
+      "slug": "brass-lantern",
+      "name": "Brass Lantern",
+      "cover_color": [
+        160,
+        141,
+        127
+      ],
+      "circle_color": null,
+      "anilist_id": 90021,
+      "mal_id": 90021,
+      "year": 2021,
+      "author": "FAKE_AUTHOR_2",
+      "publisher": "FAKE_PUB_1",
+      "purpose": "Chapter-only series (C01-C10, no volumes).",
+      "layout": "chapters_only",
+      "files": [
+        {
+          "relative_path": "Brass Lantern/Brass Lantern - C01 (2021).cbz",
+          "format": "cbz",
+          "page_count": 9,
+          "cover": {
+            "kind": "C",
+            "num": "01",
+            "subtitle": null,
+            "year": 2021
+          }
+        },
+        {
+          "relative_path": "Brass Lantern/Brass Lantern - C02 (2021).cbz",
+          "format": "cbz",
+          "page_count": 5,
+          "cover": {
+            "kind": "C",
+            "num": "02",
+            "subtitle": null,
+            "year": 2021
+          }
+        },
+        {
+          "relative_path": "Brass Lantern/Brass Lantern - C03 (2021).cbz",
+          "format": "cbz",
+          "page_count": 8,
+          "cover": {
+            "kind": "C",
+            "num": "03",
+            "subtitle": null,
+            "year": 2021
+          }
+        },
+        {
+          "relative_path": "Brass Lantern/Brass Lantern - C04 (2021).cbz",
+          "format": "cbz",
+          "page_count": 5,
+          "cover": {
+            "kind": "C",
+            "num": "04",
+            "subtitle": null,
+            "year": 2021
+          }
+        },
+        {
+          "relative_path": "Brass Lantern/Brass Lantern - C05 (2021).cbz",
+          "format": "cbz",
+          "page_count": 9,
+          "cover": {
+            "kind": "C",
+            "num": "05",
+            "subtitle": null,
+            "year": 2021
+          }
+        },
+        {
+          "relative_path": "Brass Lantern/Brass Lantern - C06 (2021).cbz",
+          "format": "cbz",
+          "page_count": 9,
+          "cover": {
+            "kind": "C",
+            "num": "06",
+            "subtitle": null,
+            "year": 2021
+          }
+        },
+        {
+          "relative_path": "Brass Lantern/Brass Lantern - C07 (2021).cbz",
+          "format": "cbz",
+          "page_count": 10,
+          "cover": {
+            "kind": "C",
+            "num": "07",
+            "subtitle": null,
+            "year": 2021
+          }
+        },
+        {
+          "relative_path": "Brass Lantern/Brass Lantern - C08 (2021).cbz",
+          "format": "cbz",
+          "page_count": 9,
+          "cover": {
+            "kind": "C",
+            "num": "08",
+            "subtitle": null,
+            "year": 2021
+          }
+        },
+        {
+          "relative_path": "Brass Lantern/Brass Lantern - C09 (2021).cbz",
+          "format": "cbz",
+          "page_count": 8,
+          "cover": {
+            "kind": "C",
+            "num": "09",
+            "subtitle": null,
+            "year": 2021
+          }
+        },
+        {
+          "relative_path": "Brass Lantern/Brass Lantern - C10 (2021).cbz",
+          "format": "cbz",
+          "page_count": 9,
+          "cover": {
+            "kind": "C",
+            "num": "10",
+            "subtitle": null,
+            "year": 2021
+          }
+        }
+      ]
+    },
+    {
+      "slug": "cobalt-wager",
+      "name": "Cobalt Wager",
+      "cover_color": [
+        163,
+        126,
+        26
+      ],
+      "circle_color": null,
+      "anilist_id": 90022,
+      "mal_id": 90022,
+      "year": 2023,
+      "author": "FAKE_AUTHOR_3",
+      "publisher": "FAKE_PUB_2",
+      "purpose": "Files in a deeper subfolder (Series/Extras/V01.cbz). Rejected at L1+L2.",
+      "layout": "deep_nested",
+      "files": [
+        {
+          "relative_path": "Cobalt Wager/Extras/Cobalt Wager - V01 (2023).cbz",
+          "format": "cbz",
+          "page_count": 7,
+          "cover": {
+            "kind": "V",
+            "num": "01",
+            "subtitle": null,
+            "year": 2023
+          }
+        },
+        {
+          "relative_path": "Cobalt Wager/Extras/Cobalt Wager - V02 (2024).cbz",
+          "format": "cbz",
+          "page_count": 5,
+          "cover": {
+            "kind": "V",
+            "num": "02",
+            "subtitle": null,
+            "year": 2024
+          }
+        },
+        {
+          "relative_path": "Cobalt Wager/Extras/Cobalt Wager - V03 (2025).cbz",
+          "format": "cbz",
+          "page_count": 8,
+          "cover": {
+            "kind": "V",
+            "num": "03",
+            "subtitle": null,
+            "year": 2025
+          }
+        }
+      ]
+    },
+    {
+      "slug": "naked-tokens",
+      "name": "Naked Tokens",
+      "cover_color": [
+        180,
+        180,
+        180
+      ],
+      "circle_color": null,
+      "anilist_id": 0,
+      "mal_id": 0,
+      "year": 2020,
+      "author": "FAKE_AUTHOR_1",
+      "publisher": "FAKE_PUB_1",
+      "purpose": "Folder whose name is *only* a year + tokens — peels to empty. Triggers the L1+L2 'no name after peeling tokens/year' reject path in StrictParser. Cover shows generic placeholder.",
+      "layout": "reject_empty_after_peel",
+      "files": [
+        {
+          "relative_path": "(2020) {aniListId-90099}/V01.cbz",
+          "format": "cbz",
+          "page_count": 5,
+          "cover": {
+            "kind": "V",
+            "num": "01",
+            "subtitle": null,
+            "year": 2020
+          }
+        }
+      ]
+    }
+  ]
+}

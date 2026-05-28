@@ -29,6 +29,7 @@ public partial class ParseScannedFiles
     private readonly ILogger _logger;
     private readonly IDirectoryService _directoryService;
     private readonly IReadingItemService _readingItemService;
+    private readonly IStrictReadingItemService? _strictReadingItemService;
     private readonly IEventHub _eventHub;
     private readonly IMediaErrorService _mediaErrorService;
 
@@ -41,12 +42,15 @@ public partial class ParseScannedFiles
     /// <param name="readingItemService">ReadingItemService Service for extracting information on a number of formats</param>
     /// <param name="eventHub">For firing off SignalR events</param>
     /// <param name="mediaErrorService"></param>
+    /// <param name="strictReadingItemService">Fork-only; non-null in production DI, optional so upstream tests can keep their existing 5-arg construction.</param>
     public ParseScannedFiles(ILogger logger, IDirectoryService directoryService,
-        IReadingItemService readingItemService, IEventHub eventHub, IMediaErrorService mediaErrorService)
+        IReadingItemService readingItemService, IEventHub eventHub, IMediaErrorService mediaErrorService,
+        IStrictReadingItemService? strictReadingItemService = null)
     {
         _logger = logger;
         _directoryService = directoryService;
         _readingItemService = readingItemService;
+        _strictReadingItemService = strictReadingItemService;
         _eventHub = eventHub;
         _mediaErrorService = mediaErrorService;
     }
@@ -775,7 +779,7 @@ public partial class ParseScannedFiles
         {
             // Process files sequentially
             result.ParserInfos = files
-                .Select(file => _readingItemService.ParseFile(file, normalizedFolder, result.LibraryRoot, library.Type, library.EnableMetadata))
+                .Select(file => ParseOne(file, normalizedFolder, result.LibraryRoot, library))
                 .Where(info => info != null)
                 .ToList()!;
         }
@@ -797,7 +801,7 @@ public partial class ParseScannedFiles
                     // Task.Run keeps the synchronous parser work off the enumerating thread
                     // while the semaphore bounds how many parses run at once.
                     return await Task.Run(() =>
-                        _readingItemService.ParseFile(file, normalizedFolder, result.LibraryRoot, library.Type, library.EnableMetadata));
+                        ParseOne(file, normalizedFolder, result.LibraryRoot, library));
                 }
                 finally
                 {
@@ -942,4 +946,20 @@ public partial class ParseScannedFiles
 
     [GeneratedRegex(@"^\d+(\.\d+)?")]
     private static partial Regex LeadingFloatRegex();
+
+    /// <summary>
+    /// Fork-only dispatch helper: route to the strict-mode parser when the library
+    /// asks for it (level &gt;= 1) and the strict service is wired up; otherwise
+    /// fall through to upstream parsing. <see cref="_strictReadingItemService"/>
+    /// is nullable so upstream tests can keep constructing this class without it.
+    /// </summary>
+    private ParserInfo? ParseOne(string file, string normalizedFolder, string libraryRoot, Library library)
+    {
+        if (library.ParserStrictnessLevel >= 1 && _strictReadingItemService != null)
+        {
+            return _strictReadingItemService.ParseFile(file, normalizedFolder, libraryRoot,
+                library.Type, library.EnableMetadata, library.ParserStrictnessLevel, library.Id);
+        }
+        return _readingItemService.ParseFile(file, normalizedFolder, libraryRoot, library.Type, library.EnableMetadata);
+    }
 }

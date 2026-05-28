@@ -117,6 +117,12 @@ public class ParserInfo
     /// </summary>
     public bool HasEndMarker { get; set; }
 
+    /// <summary>
+    /// Release year parsed from the series folder name in Strict mode (the trailing (YYYY) on the folder).
+    /// 0 means unset. Only populated by the Strict parser.
+    /// </summary>
+    public int SeriesReleaseYear { get; set; }
+
 
     // Transformed logic
     /// <summary>

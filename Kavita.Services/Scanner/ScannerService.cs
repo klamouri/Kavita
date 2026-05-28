@@ -60,7 +60,8 @@ public class ScannerService(
     IReadingItemService readingItemService,
     IServiceScopeFactory scopeFactory,
     IWordCountAnalyzerService wordCountAnalyzerService,
-    IMediaErrorService mediaErrorService)
+    IMediaErrorService mediaErrorService,
+    IStrictReadingItemService? strictReadingItemService = null)
     : IScannerService
 {
     public const string Name = "ScannerService";
@@ -244,8 +245,10 @@ public class ScannerService(
             MessageFactory.LibraryScanProgressEvent(library.Name, ProgressEventType.Started, series.Name, 1));
 
         logger.LogInformation("Beginning file scan on {SeriesName}", series.Name);
+        using var strictScan = StrictMode.StrictScanScope.Begin(library.Id); // fork
         var (scanElapsedTime, parsedSeries) = await ScanFiles(library, [folderPath],
             false, true);
+        strictScan.RegisterScannedFiles(parsedSeries); // fork
 
         logger.LogInformation("ScanFiles for {Series} took {Time} milliseconds", series.Name, scanElapsedTime);
 
@@ -516,7 +519,7 @@ public class ScannerService(
 
         var libraryFolderPaths = library!.Folders.Select(fp => fp.Path).ToList();
         if (!await CheckMounts(library.Name, libraryFolderPaths)) return;
-
+        using var strictScan = StrictMode.StrictScanScope.Begin(libraryId); // fork
 
         // Validations are done, now we can start actual scan
         logger.LogInformation("[ScannerService] Beginning file scan on {LibraryName}", library.Name);
@@ -537,6 +540,7 @@ public class ScannerService(
         logger.LogDebug("[ScannerService] Library {LibraryName} Step 1: Scan & Parse Files", library.Name);
         var (scanElapsedTime, parsedSeries) = await ScanFiles(library, libraryFolderPaths,
             shouldUseLibraryScan, forceUpdate);
+        strictScan.RegisterScannedFiles(parsedSeries); // fork
 
         // We need to remove any keys where there is no actual parser info
         logger.LogDebug("[ScannerService] Library {LibraryName} Step 2: Process and Update Database", library.Name);
@@ -808,7 +812,7 @@ public class ScannerService(
     private async Task<Tuple<long, Dictionary<ParsedSeries, IList<ParserInfo>>>> ScanFiles(Library library, IList<string> dirs,
         bool isLibraryScan, bool forceChecks = false)
     {
-        var scanner = new ParseScannedFiles(logger, directoryService, readingItemService, eventHub, mediaErrorService);
+        var scanner = new ParseScannedFiles(logger, directoryService, readingItemService, eventHub, mediaErrorService, strictReadingItemService);
         var scanWatch = Stopwatch.StartNew();
 
         var processedSeries = await scanner.ScanLibrariesForSeries(library, dirs,

@@ -131,6 +131,7 @@ export class LibrarySettingsModalComponent implements OnInit {
     allowMetadataMatching: new FormControl<boolean>(true, { nonNullable: true, validators: [] }),
     collapseSeriesRelationships: new FormControl<boolean>(false, { nonNullable: true, validators: [] }),
     enableMetadata: new FormControl<boolean>(true, { nonNullable: true, validators: [] }), // required validator doesn't check value, just if true
+    parserStrictnessLevel: new FormControl<number>(0, { nonNullable: true, validators: [] }),
     removePrefixForSortName: new FormControl<boolean>(false, { nonNullable: true, validators: [] }),
     inheritWebLinksFromFirstChapter: new FormControl<boolean>(false, { nonNullable: true, validators: []}),
     defaultLanguage: new FormControl<string>('', {nonNullable: true, validators: []}),
@@ -314,6 +315,7 @@ export class LibrarySettingsModalComponent implements OnInit {
       this.libraryForm.get('metadataProvider')?.setValue(this.library.metadataProvider);
       this.libraryForm.get('excludePatterns')?.setValue(this.excludePatterns ? this.library.excludePatterns : false);
       this.libraryForm.get('enableMetadata')?.setValue(this.library.enableMetadata);
+      this.libraryForm.get('parserStrictnessLevel')?.setValue(this.library.parserStrictnessLevel ?? 0);
       this.libraryForm.get('removePrefixForSortName')?.setValue(this.library.removePrefixForSortName);
       this.libraryForm.get('inheritWebLinksFromFirstChapter')?.setValue(this.library.inheritWebLinksFromFirstChapter);
       this.libraryForm.get('defaultLanguage')?.setValue(this.library.defaultLanguage);

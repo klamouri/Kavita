@@ -37,6 +37,7 @@ export interface Library extends LiteLibrary{
     allowScrobbling: boolean;
     allowMetadataMatching: boolean;
     enableMetadata: boolean;
+    parserStrictnessLevel: number;
     removePrefixForSortName: boolean;
     collapseSeriesRelationships: boolean;
     inheritWebLinksFromFirstChapter: boolean;

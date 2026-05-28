@@ -54,6 +54,15 @@ public class Library : IEntityDate, IHasCoverImage
     /// </summary>
     public bool EnableMetadata { get; set; } = true;
     /// <summary>
+    /// Parser strictness level (fork-only).
+    /// <c>0</c> = vanilla Kavita parsing (no fork behavior).
+    /// <c>1</c> = "Strict" — folder-as-series + lenient kind-token detection + loose-leaf fallback.
+    /// <c>2</c> = "Stricter" — same as 1 but requires the kind token at the start of a <c>" - "</c>
+    /// segment; rejects files with no kind token.
+    /// See fork-docs/parser-strictness.md for the contract.
+    /// </summary>
+    public int ParserStrictnessLevel { get; set; } = 0;
+    /// <summary>
     /// Should Kavita remove sort articles "The" for the sort name
     /// </summary>
     public bool RemovePrefixForSortName { get; set; } = false;

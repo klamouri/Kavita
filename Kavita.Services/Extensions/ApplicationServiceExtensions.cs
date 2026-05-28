@@ -41,6 +41,7 @@ public static class ApplicationServiceExtensions
         services.AddScoped<IDownloadService, DownloadService>();
         services.AddScoped<IReaderService, ReaderService>();
         services.AddScoped<IReadingItemService, ReadingItemService>();
+        services.AddForkServices(); // fork
         services.AddScoped<IAccountService, AccountService>();
         services.AddScoped<IEmailService, EmailService>();
         services.AddScoped<IBookmarkService, BookmarkService>();

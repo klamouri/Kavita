@@ -25,6 +25,7 @@ import {SettingFragmentPipe} from "../../../_pipes/setting-fragment.pipe";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import {tap} from "rxjs";
 import {ManageMediaIssuesComponent} from "../../../admin/manage-media-issues/manage-media-issues.component";
+import {ParserDebugLogComponent} from "../../../admin/parser-debug-log/parser-debug-log.component";
 import {
   ManageCustomizationComponent
 } from "../../../sidenav/_components/manage-customization/manage-customization.component";
@@ -86,6 +87,7 @@ import {AccountSettingsComponent} from "../../../user-settings/account-settings/
     SettingFragmentPipe,
     ManageScrobblingComponent,
     ManageMediaIssuesComponent,
+    ParserDebugLogComponent,
     ManageCustomizationComponent,
     ImportMalCollectionComponent,
     ManageMatchedMetadataComponent,

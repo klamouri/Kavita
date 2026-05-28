@@ -549,3 +549,15 @@ Kavita.Server/config/appsettings.*.json
 
 # Old installs might have this as a default location
 API/config/bookmarks/
+
+# Fork-only: local Kavita config / debug-log DB for docker-compose smoke tests
+.local/
+
+# Fork-only: Playwright MCP screenshot / console-log dumps
+.playwright-mcp/
+
+# Fork-only: Python venv for the test-library renderer (scripts/generate-test-library.py)
+scripts/.venv/
+
+# Fork-only: rendered output of the synthetic strict-parser test library
+Kavita.Services.Tests/Test Data/StrictParser/generated/

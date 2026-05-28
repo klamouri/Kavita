@@ -45,6 +45,7 @@ export enum SettingsTabId {
   Tasks = 'admin-tasks',
   Statistics = 'admin-statistics',
   MediaIssues = 'admin-media-issues',
+  ParserLog = 'admin-parser-log',
   EmailHistory = 'admin-email-history',
   ManageMetadata = 'admin-public-metadata',
   AdminDevices = 'admin-device',
@@ -292,6 +293,7 @@ export class PreferenceNavComponent implements AfterViewInit {
         children: [
           new SideNavItem(SettingsTabId.System, [Role.Admin]),
           new SideNavItem(SettingsTabId.MediaIssues, [Role.Admin], this.mediaIssuesBadgeCount),
+          new SideNavItem(SettingsTabId.ParserLog, [Role.Admin]),
           new SideNavItem(SettingsTabId.EmailHistory, [Role.Admin]),
         ]
       },

@@ -121,6 +121,16 @@
             }
           }
 
+          @case (SettingsTabId.ParserLog) {
+            @if (accountService.hasAdminRole()) {
+              @defer {
+                <div class="scale col-md-12">
+                  <app-parser-debug-log />
+                </div>
+              }
+            }
+          }
+
           @case (SettingsTabId.EmailHistory) {
             @if (accountService.hasAdminRole()) {
               @defer {

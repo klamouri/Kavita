@@ -1,0 +1,47 @@
+<Project>
+
+  <!--
+    Fork-only MSBuild bits for Kavita.Services.Tests.
+
+    Imported from Kavita.Services.Tests.csproj via:
+
+        <Import Project="Fork.targets" />
+
+    Goal: keep the upstream csproj touch to a single <Import> line so future
+    fork tasks (additional content includes, more renderers, etc.) can be
+    added without re-editing the upstream csproj.
+  -->
+
+  <ItemGroup>
+    <!-- catalog.json must travel with the test binary so CatalogJsonFixtureTests can read it at runtime. -->
+    <None Update="Test Data/StrictParser/catalog.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <!--
+    Opt-in MSBuild target for the synthetic test library fixtures.
+    Reads Test Data/StrictParser/catalog.json (the single source of truth) and
+    renders the cbz/png tree under Test Data/StrictParser/generated/.
+
+    Usage from the repo root:
+        dotnet build Kavita.Services.Tests/Kavita.Services.Tests.csproj -t:GenerateTestLibrary
+
+    The target invokes ../scripts/generate-test-library.py and bootstraps a venv
+    under scripts/.venv on first run. See Test Data/StrictParser/README.md.
+  -->
+  <PropertyGroup>
+    <ScriptsDir>$(MSBuildProjectDirectory)/../scripts</ScriptsDir>
+  </PropertyGroup>
+
+  <Target Name="GenerateTestLibrary">
+    <Message Importance="high" Text="Rendering test library fixtures from catalog.json (Python 3 + Pillow required)..." />
+    <Exec Command="python3 -m venv .venv"                                                WorkingDirectory="$(ScriptsDir)" Condition="'$(OS)' != 'Windows_NT'" />
+    <Exec Command="python -m venv .venv"                                                 WorkingDirectory="$(ScriptsDir)" Condition="'$(OS)' == 'Windows_NT'" />
+    <Exec Command=".venv/bin/pip install -q -r requirements-test-library.txt"            WorkingDirectory="$(ScriptsDir)" Condition="'$(OS)' != 'Windows_NT'" />
+    <Exec Command=".venv\Scripts\pip.exe install -q -r requirements-test-library.txt"    WorkingDirectory="$(ScriptsDir)" Condition="'$(OS)' == 'Windows_NT'" />
+    <Exec Command=".venv/bin/python generate-test-library.py"                            WorkingDirectory="$(ScriptsDir)" Condition="'$(OS)' != 'Windows_NT'" />
+    <Exec Command=".venv\Scripts\python.exe generate-test-library.py"                    WorkingDirectory="$(ScriptsDir)" Condition="'$(OS)' == 'Windows_NT'" />
+  </Target>
+
+</Project>

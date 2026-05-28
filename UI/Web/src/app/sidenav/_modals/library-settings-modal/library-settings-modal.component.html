@@ -172,6 +172,39 @@
             }
 
             <div class="row g-0 mt-4 mb-4">
+              <h6 class="section-title">{{t('parser-strictness-label')}}</h6>
+              <div class="text-muted mt-2">{{t('parser-strictness-tooltip')}}</div>
+              <div class="form-check mt-3">
+                <input class="form-check-input" type="radio" id="parser-strictness-0"
+                       formControlName="parserStrictnessLevel" [value]="0">
+                <label class="form-check-label" for="parser-strictness-0">
+                  <strong>{{t('parser-strictness-0')}}</strong>
+                  <div class="text-muted small">{{t('parser-strictness-0-help')}}</div>
+                </label>
+              </div>
+              <div class="form-check mt-2">
+                <input class="form-check-input" type="radio" id="parser-strictness-1"
+                       formControlName="parserStrictnessLevel" [value]="1">
+                <label class="form-check-label" for="parser-strictness-1">
+                  <strong>{{t('parser-strictness-1')}}</strong>
+                  <div class="text-muted small">{{t('parser-strictness-1-help')}}</div>
+                </label>
+              </div>
+              <div class="form-check mt-2">
+                <input class="form-check-input" type="radio" id="parser-strictness-2"
+                       formControlName="parserStrictnessLevel" [value]="2">
+                <label class="form-check-label" for="parser-strictness-2">
+                  <strong>{{t('parser-strictness-2')}}</strong>
+                  <div class="text-muted small">{{t('parser-strictness-2-help')}}</div>
+                </label>
+              </div>
+              <div class="alert alert-warning mt-3 mb-0" role="alert">
+                <strong>{{t('parser-strictness-warning-title')}}</strong>
+                {{t('parser-strictness-warning-body')}}
+              </div>
+            </div>
+
+            <div class="row g-0 mt-4 mb-4">
               <app-setting-switch [title]="t('manage-collection-label')" [subtitle]="t('manage-collection-tooltip')">
                 <ng-template>
                   <div class="form-check form-switch float-end">

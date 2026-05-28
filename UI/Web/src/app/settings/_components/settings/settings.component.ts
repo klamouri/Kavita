@@ -27,6 +27,7 @@ import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import {tap} from "rxjs";
 import {ManageScrobblingComponent} from "../../../admin/manage-scrobling/manage-scrobbling.component";
 import {ManageMediaIssuesComponent} from "../../../admin/manage-media-issues/manage-media-issues.component";
+import {ParserDebugLogComponent} from "../../../admin/parser-debug-log/parser-debug-log.component";
 import {
   ManageCustomizationComponent
 } from "../../../sidenav/_components/manage-customization/manage-customization.component";
@@ -77,6 +78,7 @@ import {ManageRemapRulesComponent} from "../../../user-settings/manage-remap-rul
     SettingFragmentPipe,
     ManageScrobblingComponent,
     ManageMediaIssuesComponent,
+    ParserDebugLogComponent,
     ManageCustomizationComponent,
     ImportMalCollectionComponent,
     ManageMatchedMetadataComponent,

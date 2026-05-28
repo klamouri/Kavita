@@ -1,0 +1,97 @@
+<ng-container *transloco="let t; read: 'parser-debug-log'">
+  <h4>{{t('title')}}</h4>
+  <p class="text-muted">{{t('description')}}</p>
+  <div class="alert alert-info small">{{t('only-strict-levels')}}</div>
+
+  <form [formGroup]="filterForm" class="row g-2 align-items-end mb-3">
+    <div class="col-auto">
+      <label class="form-label" for="parserlog-filter-library">{{t('filter-library-id')}}</label>
+      <input type="number" id="parserlog-filter-library" class="form-control form-control-sm"
+             formControlName="libraryId" min="0">
+    </div>
+    <div class="col-auto">
+      <label class="form-label" for="parserlog-filter-limit">{{t('filter-limit')}}</label>
+      <input type="number" id="parserlog-filter-limit" class="form-control form-control-sm"
+             formControlName="limit" min="1" max="2000">
+    </div>
+    <div class="col-auto form-check mt-3">
+      <input type="checkbox" id="parserlog-show-accepted" class="form-check-input" formControlName="showAccepted">
+      <label class="form-check-label" for="parserlog-show-accepted">
+        <span class="badge bg-success">{{t('accepted')}}</span>
+      </label>
+    </div>
+    <div class="col-auto form-check mt-3">
+      <input type="checkbox" id="parserlog-show-lenient" class="form-check-input" formControlName="showLenient">
+      <label class="form-check-label" for="parserlog-show-lenient">
+        <span class="badge bg-warning text-dark">{{t('lenient')}}</span>
+      </label>
+    </div>
+    <div class="col-auto form-check mt-3">
+      <input type="checkbox" id="parserlog-show-rejected" class="form-check-input" formControlName="showRejected">
+      <label class="form-check-label" for="parserlog-show-rejected">
+        <span class="badge bg-danger">{{t('rejected')}}</span>
+      </label>
+    </div>
+    <div class="col-auto">
+      <button type="button" class="btn btn-primary btn-sm" (click)="refresh()" [disabled]="isLoading">
+        {{t('refresh')}}
+      </button>
+      <button type="button" class="btn btn-outline-danger btn-sm ms-2" (click)="clear()" [disabled]="isLoading">
+        {{t('clear')}}
+      </button>
+    </div>
+  </form>
+
+  @if (isLoading) {
+    <div class="text-muted">{{t('loading')}}</div>
+  } @else if (filteredEntries.length === 0) {
+    <div class="text-muted">{{t('empty')}}</div>
+  } @else {
+    <div class="table-responsive">
+      <table class="table table-sm table-hover small">
+        <thead>
+          <tr>
+            <th>{{t('col-time')}}</th>
+            <th>{{t('col-library')}}</th>
+            <th>{{t('col-level')}}</th>
+            <th>{{t('col-outcome')}}</th>
+            <th>{{t('col-series')}}</th>
+            <th>{{t('col-vol')}}</th>
+            <th>{{t('col-ch')}}</th>
+            <th>{{t('col-special')}}</th>
+            <th>{{t('col-year')}}</th>
+            <th>{{t('col-tokens')}}</th>
+            <th>{{t('col-reason')}}</th>
+            <th>{{t('col-file')}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (entry of filteredEntries; track trackBy($index, entry)) {
+            <tr>
+              <td class="text-nowrap">{{entry.timestampUtc | utcToLocalTime}}</td>
+              <td>{{entry.libraryId}}</td>
+              <td>{{entry.levelAtParse}}</td>
+              <td>
+                @if (entry.outcome === ParserOutcome.Accepted) {
+                  <span class="badge bg-success">{{t('accepted')}}</span>
+                } @else if (entry.outcome === ParserOutcome.Lenient) {
+                  <span class="badge bg-warning text-dark" [title]="t('lenient-tooltip')">{{t('lenient')}}</span>
+                } @else {
+                  <span class="badge bg-danger">{{t('rejected')}}</span>
+                }
+              </td>
+              <td>{{entry.series}}</td>
+              <td>{{entry.volumes}}</td>
+              <td>{{entry.chapters}}</td>
+              <td>{{entry.isSpecial ? '✔' : ''}}</td>
+              <td>{{entry.seriesReleaseYear || ''}}</td>
+              <td><code>{{entry.tokens}}</code></td>
+              <td>{{entry.reason}}</td>
+              <td><code>{{entry.filePath}}</code></td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</ng-container>

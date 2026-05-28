@@ -29,6 +29,7 @@ using Kavita.Services.Builders;
 using Kavita.Services.Extensions;
 using Kavita.Services.Helpers;
 using Kavita.Services.Plus;
+using Kavita.Services.Scanner.StrictMode;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
@@ -89,11 +90,7 @@ public class ProcessSeries(
         Series? series;
         try
         {
-            // There is an opportunity to allow duplicate series here. Like if One is in root/marvel/batman and another is root/dc/batman
-            // by changing to a ToList() and if multiple, doing a firstInfo.FirstFolder/RootFolder type check
-            series =
-                await unitOfWork.SeriesRepository.GetFullSeriesByAnyName(firstInfo.Series, firstInfo.LocalizedSeries,
-                    library.Id, firstInfo.Format);
+            series = await StrictSeriesLookup.ResolveAndClaim(unitOfWork, library, firstInfo, parsedInfos, directoryService); // fork
         }
         catch (Exception ex)
         {
@@ -163,6 +160,14 @@ public class ProcessSeries(
             }
 
             await UpdateSeriesMetadata(databasePeople, settings, series, library);
+
+            // Strict mode (level >= 1): folder-name tokens are the durable source of truth —
+            // apply and lock the matching metadata fields so ComicInfo / scrobbler can't
+            // overwrite them. Level 0 = vanilla Kavita, never reaches this branch.
+            if (library.ParserStrictnessLevel >= 1)
+            {
+                StrictMetadataApplier.Apply(series, parsedInfos, library);
+            }
 
             // Update series FolderPath here
             await UpdateSeriesFolderPath(parsedInfos, library, series);
@@ -675,7 +680,12 @@ public class ProcessSeries(
             Chapter? chapter;
             try
             {
-                chapter = args.Volume.Chapters.GetChapterByRange(info);
+                // Fork: when the by-Range lookup misses (different parser produces a
+                // different Chapter.Range for the same file), fall back to "any
+                // Chapter in this Volume already owning this file path". Reuses the
+                // existing Chapter row → no duplicate Chapter + MangaFile rows.
+                chapter = args.Volume.Chapters.GetChapterByRange(info)
+                       ?? StrictChapterLookup.FindByFilePath(args.Volume.Chapters, info);
             }
             catch (Exception ex)
             {

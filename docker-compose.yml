@@ -1,0 +1,46 @@
+# Local-testing docker-compose for the Strict-parser fork.
+#
+# Quick start (after building the image and generating the test fixture —
+# see .claude/rules/functional-testing.md):
+#   docker compose up -d
+#
+# Override per-mount host paths to point at any folder you want:
+#   KAVITA_LIB_LEVEL_2=/path/to/clean-lib docker compose up -d
+#
+# Three read-only mount points, one per parser strictness level (0/1/2). Each
+# can point at a different host folder, or all three at the same folder if
+# you want to scan the same content at three strictness levels (useful for
+# comparing Accepted vs Lenient vs Rejected counts on identical input).
+#
+# The DEFAULT host path is the generated synthetic fixture:
+#   ./Kavita.Services.Tests/Test Data/StrictParser/generated/all-cases
+# That tree is NOT in git — generate it first via:
+#   dotnet build Kavita.Services.Tests/Kavita.Services.Tests.csproj \
+#     -t:GenerateTestLibrary
+#
+# Image is built locally as `kavita-strict-fork:dev` by the repro steps in the
+# functional-testing rule doc. Once the GHCR publish workflow has run, swap the
+# `image:` line for `ghcr.io/<owner>/kavita-strict-fork:<tag>` to pull instead.
+
+services:
+  kavita:
+    image: kavita-strict-fork:dev
+    container_name: kavita-strict-test
+    platform: linux/arm64   # change to linux/amd64 on non-Apple-Silicon hosts
+    ports:
+      - "5005:5000"
+    volumes:
+      - ./.local/kavita-config:/kavita/config
+      # === One mount per strictness level, mounted read-only. ===
+      # Series folders live under each mount's `manga/` subfolder. Inside the
+      # container they're exposed as /libs/level-{0,1,2}/manga/<Series>/<files>...
+      - ${KAVITA_LIB_LEVEL_0:-./Kavita.Services.Tests/Test Data/StrictParser/generated/all-cases}:/libs/level-0:ro
+      - ${KAVITA_LIB_LEVEL_1:-./Kavita.Services.Tests/Test Data/StrictParser/generated/all-cases}:/libs/level-1:ro
+      - ${KAVITA_LIB_LEVEL_2:-./Kavita.Services.Tests/Test Data/StrictParser/generated/all-cases}:/libs/level-2:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:5000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s

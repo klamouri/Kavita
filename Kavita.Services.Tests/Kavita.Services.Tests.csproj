@@ -43,4 +43,6 @@
       </Content>
     </ItemGroup>
 
+    <Import Project="Fork.targets" />
+
 </Project>

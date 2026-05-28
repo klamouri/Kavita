@@ -1,0 +1,101 @@
+name: Fork Docker Publish
+
+# Builds the Strict-parser fork as a multi-arch Docker image and pushes it to
+# GitHub Container Registry under the repository owner's namespace.
+#
+# Trigger:
+#   - Push of any tag matching v*-patched-* (e.g. v0.9.1.4-patched-0.1.0). Image is
+#     tagged with the same tag string AND :latest is moved to point at it.
+#   - Manual dispatch (lets you push an ad-hoc tag without cutting a real one).
+#     Does not move :latest.
+
+on:
+  push:
+    tags:
+      - 'v*-patched-*'
+  workflow_dispatch:
+    inputs:
+      image_tag:
+        description: 'Image tag to push (defaults to the short SHA when triggered manually).'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build-and-push:
+    name: Build and push fork image
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Resolve image tag
+        id: resolve_tag
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_IMAGE_TAG: ${{ inputs.image_tag }}
+          REPO_OWNER: ${{ github.repository_owner }}
+        run: |
+          IMAGE="ghcr.io/$(echo "$REPO_OWNER" | tr '[:upper:]' '[:lower:]')/kavita-strict-fork"
+          if [[ "$EVENT_NAME" == "push" ]]; then
+            TAG="${GITHUB_REF#refs/tags/}"
+          elif [[ -n "$INPUT_IMAGE_TAG" ]]; then
+            TAG="$INPUT_IMAGE_TAG"
+          else
+            TAG="sha-${GITHUB_SHA::7}"
+          fi
+          # Only release tag pushes move :latest; manual dispatches push the ad-hoc tag only.
+          {
+            echo "TAGS<<EOF"
+            echo "$IMAGE:$TAG"
+            if [[ "$EVENT_NAME" == "push" ]]; then echo "$IMAGE:latest"; fi
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+
+      - name: Build UI
+        run: |
+          cd UI/Web
+          npm ci --legacy-peer-deps
+          npm run prod
+          rsync -a dist/ ../../Kavita.Server/wwwroot/
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Build runtimes
+        run: ./monorepo-build.sh
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm/v7,linux/arm64
+          push: true
+          tags: ${{ steps.resolve_tag.outputs.TAGS }}
+
+      - name: Image digest
+        run: echo "${{ steps.docker_build.outputs.digest }}"

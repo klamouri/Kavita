@@ -1,4 +1,17 @@
-﻿# [<img src="/Logo/kavita.svg" width="32" alt="">]() Kavita
+### Kavita strict-parser fork
+
+This branch adds an opt-in **per-library parser strictness level** on top of
+upstream Kavita. It can treat the series folder as the source of truth, read
+simple `{key-value}` metadata tokens, and show a Parser Logs page for scan
+debugging. Level 0 is still vanilla Kavita; stricter parsing is enabled
+per-library and can be turned back off.
+
+**➜ Read [`FORK.md`](FORK.md) for the fork's rationale, install, token
+contract, and rollback story.**
+
+---
+
+# [<img src="/Logo/kavita.svg" width="32" alt="">]() Kavita
 <div align="center">
 
 ![new_github_preview_stills](https://github.com/user-attachments/assets/f016b34f-3c4c-4f07-8e72-12cd6f4e71ea)
@@ -113,4 +126,3 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 ### License
 * [GNU GPL v3](http://www.gnu.org/licenses/gpl.html)
 * Copyright 2020-2026
-
